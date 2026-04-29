@@ -36,12 +36,12 @@ unordered_map<int,string>kisiler(const string &dosyaAdi){
     return kisilerMap;
 }
 
-string bugununTarihi(){                                                                                                                             //gptden yardim alindi
+string bugununTarihi(){
     time_t t=time(0);
     tm* now=localtime(&t);
     return to_string(now->tm_year + 1900) + "-" + to_string(now->tm_mon + 1) + "-" + to_string(now->tm_mday);
 }
-string geriVerilmesiGerekenTarih(int gunEkle){                                                                                                      //gptden yardim alindi
+string geriVerilmesiGerekenTarih(int gunEkle){
     time_t t=time(0)+(gunEkle*86400);
     tm* now=localtime(&t);
     return to_string(now->tm_year + 1900)+"-"+to_string(now->tm_mon + 1)+"-"+to_string(now->tm_mday);
@@ -121,7 +121,7 @@ vector<kitap>veriOku(const string &dosyaAdi){
     string satir;
     getline(dosya,satir);
 
-    while(getline(dosya,satir)){                                                                                                //gptden yardim
+    while(getline(dosya,satir)){
         stringstream ss(satir);
         string parca;
         kitap k;
@@ -208,7 +208,6 @@ struct kutuphane
     }
 };
 
-// kisiler.csv ekleyemedim 3.04.2025
 
 int main(){
     kutuphane ktphn;
